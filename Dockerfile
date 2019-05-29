@@ -9,4 +9,6 @@ RUN go get -u ./...
 
 COPY . /app
 
+EXPOSE 3000
+
 CMD go build -o app && ./app
