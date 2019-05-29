@@ -4,7 +4,7 @@ go 1.12
 
 require (
 	github.com/ajg/form v1.5.1 // indirect
-	github.com/dannypsnl/rocket v0.13.0 // indirect
+	github.com/dannypsnl/rocket v0.14.0-pre0
 	github.com/gavv/httpexpect v2.0.0+incompatible // indirect
 	github.com/gavv/monotime v0.0.0-20190418164738-30dba4353424 // indirect
 	github.com/golang/protobuf v1.3.1 // indirect
