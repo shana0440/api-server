@@ -1,7 +1,12 @@
 package main
 
-import "fmt"
+import (
+	"github.com/dannypsnl/rocket"
+	"github.com/u-job/api-server/handlers"
+)
 
 func main() {
-	fmt.Println("vim-go")
+	rocket.Ignite(":3000").
+		Mount(handlers.HelloWorldHandler).
+		Launch()
 }
