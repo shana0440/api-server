@@ -1,12 +1,12 @@
 package main
 
 import (
+	"log"
+
 	"github.com/dannypsnl/rocket"
 
 	"github.com/u-job/api-server/config"
 	"github.com/u-job/api-server/handlers"
-
-	"log"
 )
 
 func main() {

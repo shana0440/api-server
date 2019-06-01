@@ -1,11 +1,10 @@
 package config
 
 import (
+	"log"
 	"os"
 
 	"github.com/joho/godotenv"
-
-	"log"
 )
 
 // Config include all configuration, include database, app, or other else.
