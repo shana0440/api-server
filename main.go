@@ -24,6 +24,7 @@ func main() {
 	log.SetLevel(configuration.App.LogLevel)
 
 	rocket.Ignite(configuration.App.Port).
-		Mount(handlers.HelloWorldHandler).
+		Mount(handlers.CreateUser).
+		Mount(handlers.GetUser).
 		Launch()
 }
