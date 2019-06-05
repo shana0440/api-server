@@ -1,11 +1,11 @@
 package models
 
 import (
-	"net/http"
 	"encoding/json"
+	"net/http"
 
-	log "github.com/sirupsen/logrus"
 	"github.com/dannypsnl/rocket/response"
+	log "github.com/sirupsen/logrus"
 )
 
 // Response is a wrapper of rocket response, use to provider more usable function
