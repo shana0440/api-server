@@ -10,12 +10,23 @@ import (
 // Config include all configuration, include database, app, or other else.
 type Config struct {
 	App *App
+	DB  *DB
 }
 
 // App is the configuration about the app
 type App struct {
 	Port     string
 	LogLevel log.Level
+}
+
+// DB is the configuration about the database
+type DB struct {
+	Host     string
+	Name     string
+	Port     string
+	User     string
+	Password string
+	SslMode  string
 }
 
 // LoadAndGetConfig use to load and get the configuration from .env file
@@ -48,6 +59,14 @@ func GetConfig() (*Config, error) {
 		App: &App{
 			Port:     os.Getenv("APP_PORT"),
 			LogLevel: level,
+		},
+		DB: &DB{
+			Host:     os.Getenv("DB_HOST"),
+			Name:     os.Getenv("DB_NAME"),
+			Port:     os.Getenv("DB_PORT"),
+			User:     os.Getenv("DB_USER"),
+			Password: os.Getenv("DB_PASSWORD"),
+			SslMode:  os.Getenv("DB_SSLMODE"),
 		},
 	}, nil
 }
