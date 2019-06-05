@@ -8,6 +8,10 @@ ENTRYPOINT ["/tini", "--"]
 
 WORKDIR /app
 
+# download migration tool
+RUN curl -L https://github.com/golang-migrate/migrate/releases/download/v4.4.0/migrate.linux-amd64.tar.gz | tar xvz \
+    && mv migrate.linux-amd64 /usr/bin/migrate
+
 COPY go.mod /app
 COPY go.sum /app
 
