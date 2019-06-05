@@ -1,0 +1,25 @@
+version: 2
+jobs:
+    build:
+        docker:
+            - image: circleci/golang:1.12
+              environment:
+                  GO111MODULE: "on"
+        working_directory: /go/src/github.com/u-job/api-server
+        steps:
+            - checkout
+            - restore_cache:
+                keys:
+                    - cache-{{ checksum "go.mod" }}
+            - run: go get -u  ./...
+            - save_cache:
+                key: cache-{{ checksum "go.mod" }}
+                paths:
+                    - "/go/pkg/mod"
+            - run: ./scripts/run-ci.sh
+
+workflows:
+    version: 2
+    build:
+        jobs:
+            - build
