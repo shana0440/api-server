@@ -15,7 +15,15 @@ var Conn *gorm.DB
 
 // CreateConn use to create the connection with database
 func CreateConn(c *config.DB) error {
-	dsn := fmt.Sprintf("host=%s port=%s user=%s dbname=%s password=%s sslmode=%s", c.Host, c.Port, c.User, c.Name, c.Password, c.SslMode)
+	dsn := fmt.Sprintf(
+		"host=%s port=%s user=%s dbname=%s password=%s sslmode=%s",
+		c.Host,
+		c.Port,
+		c.User,
+		c.Name,
+		c.Password,
+		c.SslMode,
+	)
 	conn, err := gorm.Open("postgres", dsn)
 	if err != nil {
 		return err
